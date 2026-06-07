@@ -33,7 +33,7 @@ def create_graph():
 
     # add a node
     workflow.add_node('indexer',index_video_node)
-    workflow.add_node('auditor',audit_content_mode)
+    workflow.add_node('auditor',audit_content_node)
     
     #define the entry point: indexer
 
