@@ -83,7 +83,7 @@ def index_video_node(state:VideoAuditState)-> Dict[str,Any]:
 #NODE 2 : compliance Auditor
 # this help the ai to judge the content 
 #now this VideoAuditState. contain a teanscript and ocr text 
-def audit_content_mode(state:VideoAuditState)-> Dict[str,Any]:
+def audit_content_node(state:VideoAuditState)-> Dict[str,Any]:
     '''
     perform a retrieval Augmnent generation(RAG) to audit the content =brand video
 
