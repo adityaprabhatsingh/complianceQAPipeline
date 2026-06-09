@@ -11,7 +11,7 @@ The pipeline is orchestrated using LangGraph, passing data seamlessly between th
 <img width="1600" height="842" alt="WhatsApp Image 2026-06-09 at 11 55 52" src="https://github.com/user-attachments/assets/7167b496-036b-4eb6-89d2-16fc3292b79f" />
 
 
-##📊 Observability & Monitoring
+## 📊 Observability & Monitoring
 To ensure production readiness, the system integrates OpenTelemetry to track latency, API limits, and system health. The telemetry data is pushed to Azure Application Insights.
 
 The telemetry map demonstrates live tracking of API calls between the FastAPI server, Azure Video Indexer, YouTube CDN, and LangSmith.
