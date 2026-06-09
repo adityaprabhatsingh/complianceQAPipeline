@@ -2,6 +2,7 @@
 connector : btw python and azure video indexer
 """
 
+from sqlalchemy import false
 from aiohttp import request
 from openai.types.responses import response
 from httpcore import URL
@@ -71,12 +72,16 @@ class VideoIndexerService:
         logger.info(f"downloading a youtube video{url}")
 # this code avaible on the docs 
         ytl_opts={
-            "format" : 'best[ext=mp4]',
+            "format" : 'best ',
             'outtmpl' : output_path,
-            'quiet' : True,
-            'overwrites' : True
+            'quiet' : false,
+            'overwrites' : false,
+            'extractor_args': {'youtube': {'player_client': ['android', 'web']}}, # mean try the android fist the fall back to web 
+            'http_headers': {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+    }# this making sure what brozer making the request 
 
-        }
+    }
         # azure video indexer cannot directly access the youtbe so downloaded needed
         #tell the yt_dlp to downlaod a youtube video 
         try:
