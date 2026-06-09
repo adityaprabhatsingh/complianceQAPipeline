@@ -1,12 +1,27 @@
 # Brand Guardian AI: Multimodal Compliance Orchestration Engine
 
 
-##📖 Description
+## 📖 Description
 Brand Guardian AI is an end-to-end, production-grade LLMOps project designed to automate the auditing of video advertisements against strict legal frameworks (e.g., FTC guidelines) and platform specifications (e.g., YouTube Ad Specs).
 
 Instead of relying on manual reviews, this system ingests a YouTube URL, extracts multimodal data (OCR, audio transcripts, metadata), retrieves relevant compliance rules via a RAG pipeline, and orchestrates an AI agent to determine if the video passes or fails compliance—complete with detailed, severity-flagged reporting.
 
-##📸 Demo / Screenshot
+## 🏗️ System Architecture
+The pipeline is orchestrated using LangGraph, passing data seamlessly between the ingestion services, the RAG knowledge base, and the compliance auditor agent.
+<img width="1600" height="842" alt="WhatsApp Image 2026-06-09 at 11 55 52" src="https://github.com/user-attachments/assets/7167b496-036b-4eb6-89d2-16fc3292b79f" />
+
+
+##📊 Observability & Monitoring
+To ensure production readiness, the system integrates OpenTelemetry to track latency, API limits, and system health. The telemetry data is pushed to Azure Application Insights.
+
+The telemetry map demonstrates live tracking of API calls between the FastAPI server, Azure Video Indexer, YouTube CDN, and LangSmith.
+
+<img width="1600" height="931" alt="WhatsApp Image 2026-06-09 at 11 55 52 (1)" src="https://github.com/user-attachments/assets/3b4d33f5-863b-477c-850f-8fe842374fcf" />
+
+
+
+ 
+## 📸 Demo / Screenshot
 <img width="1600" height="738" alt="fastapiswagger" src="https://github.com/user-attachments/assets/dd06adf3-8c75-4cfc-9154-ff4b2f268f2c" />
 
 
@@ -28,17 +43,17 @@ Production-Ready API: Served via a high-performance FastAPI backend.
 
 
 ## 🛠️ Tech Stack
-Language/Package Manager: Python, uv
+### Language/Package Manager: Python, uv
 
-Frameworks: FastAPI, LangChain, LangGraph
+### Frameworks: FastAPI, LangChain, LangGraph
 
-AI & Machine Learning: Azure OpenAI (GPT-4o, Text-Embedding-3-Small)
+### AI & Machine Learning: Azure OpenAI (GPT-4o, Text-Embedding-3-Small)
 
-Cloud Infrastructure (Azure): Azure Blob Storage, Azure Video Indexer, Azure AI Search
+### Cloud Infrastructure (Azure): Azure Blob Storage, Azure Video Indexer, Azure AI Search
 
-Observability: LangSmith, Azure Application Insights
+### Observability: LangSmith, Azure Application Insights
 
-Tools: yt-dlp, Pydantic
+### Tools: yt-dlp, Pydantic
 
 
 
@@ -55,25 +70,55 @@ Node.js (required by yt-dlp for certain extractions).
 ## 🤝 Contributing
 ​This project is open source. Contributions, issues, and feature requests are welcome!
 
-​1. Fork the Project
+​### 1. Fork the Project
 
-​2. Create your Feature Branch 
+​### 2. Create your Feature Branch 
 (
 git checkout -b feature/AmazingFeature
 )
 
 
-​3. Commit your Changes 
+​### 3. Commit your Changes 
 (
 git commit -m 'Add some AmazingFeature'
 )
 
 
-​4. Push to the Branch 
+​### 4. Push to the Branch 
 (
 git push origin feature/AmazingFeature
 )
 
 
 ​5. Open a Pull Request
+
+## Installation
+
+### 1. Clone the repository:
+
+   git clone https://github.com/adityaprabhatsingh/complianceQAPipeline.git
+   cd complianceQAPipeline
+   
+### 2. Initialize the environment using uv:
+   uv sync
+
+### 3.Congigure Environment Variable 
+   Add a all the congiguration after gernating from required webpage 
+
+### 4. Index the Compliance Documents
+
+  Place your rulebook PDFs in the ( backend/data ) folder, then run the indexing script to populate your vector database
+
+### Usage
+  start the FastAPI backend server:
+  (
+  uv run uvicorn backend.src.api.server:app --reload
+  )
+
+  once running, navigate to 
+  http://localhost:8000/docs
+  to interact with API via the Swagger UI
+  
+
+  
 
