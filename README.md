@@ -3,6 +3,7 @@
 
 ## 📖 Description
 Brand Guardian AI is an end-to-end, production-grade LLMOps project designed to automate the auditing of video advertisements against strict legal frameworks (e.g., FTC guidelines) and platform specifications (e.g., YouTube Ad Specs).
+<img width="1063" height="562" alt="Screenshot 2026-07-24 at 3 56 06 PM" src="https://github.com/user-attachments/assets/23cbf07b-7f4c-4f81-a817-bc637e4950e5" />
 
 Instead of relying on manual reviews, this system ingests a YouTube URL, extracts multimodal data (OCR, audio transcripts, metadata), retrieves relevant compliance rules via a RAG pipeline, and orchestrates an AI agent to determine if the video passes or fails compliance—complete with detailed, severity-flagged reporting.
 
@@ -41,6 +42,7 @@ Robust Observability: Complete tracing, latency monitoring, and logging implemen
 Production-Ready API: Served via a high-performance FastAPI backend.
 
 
+##<img width="1022" height="330" alt="Screenshot 2026-07-24 at 3 57 04 PM" src="https://github.com/user-attachments/assets/165ed49c-978e-4daf-afd2-57d7416459b6" />
 
 ## 🛠️ Tech Stack
 ### Language/Package Manager: Python, uv
@@ -94,18 +96,22 @@ git push origin feature/AmazingFeature
 
 ## Installation
 
-### 1. Clone the repository:
+
+<img width="1012" height="532" alt="Screenshot 2026-07-24 at 3 56 43 PM" src="https://github.com/user-attachments/assets/ff475524-400c-4d63-993f-0ecbfe625b8d" />
+
+## 1. Clone the repository:
 
    git clone https://github.com/adityaprabhatsingh/complianceQAPipeline.git
    cd complianceQAPipeline
    
-### 2. Initialize the environment using uv:
+##2. Initialize the environment using uv:
    uv sync
 
-### 3.Congigure Environment Variable 
+## 3.Congigure Environment Variable 
    Add a all the congiguration after gernating from required webpage 
 
-### 4. Index the Compliance Documents
+
+ 4. Index the Compliance Documents
 
   Place your rulebook PDFs in the ( backend/data ) folder, then run the indexing script to populate your vector database
 
